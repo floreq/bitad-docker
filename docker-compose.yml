@@ -17,6 +17,20 @@ services:
     networks:
       - app-network
 
+  # ASP.NET Core
+  api:
+    build: ./api
+    container_name: api
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "7000:80"
+    depends_on:
+      - app
+      - mysql
+    networks:
+      - app-network
+
   mysql:
     image: mysql:5.7.22
     container_name: mysql
