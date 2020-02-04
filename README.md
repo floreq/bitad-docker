@@ -1,14 +1,20 @@
 ## Struktura
     .
-    ├── api                       # Miejsce na pliki ASP.NET Core
-    ├── mysql                     # Plik konfiguracyjny mysql
-    ├── nginx                     # ------------------- nginx
-    ├── php                       # ------------------- php
-    ├── src                       # Miejsce na pliki aplikacji Laravel
+    ├── api                       
+    │    ├── Dockerfile             # Obraz kontenera api
+    │    └── ...                    # Miejsce na pliki ASP.NET Core
+    ├── mysql                     
+    │    └── ...                    # Plik konfiguracyjny mysql
+    ├── nginx                     
+    │    └── ...                    # Plik konfiguracyjny nginx
+    ├── php                       
+    │    └── ...                    # Plik konfiguracyjny php
+    ├── src                       
+    │    └── ...                    # Miejsce na pliki aplikacji Laravel
     ├── .gitignore
-    ├── Dockerfile
+    ├── Dockerfile                  # Obraz kontenera aplikacji Laravel
     ├── README.md
-    └── docker-compose.yml
+    └── docker-compose.yml          # Plik opisujący strukturę kontenerów
 
 ## Pomocne polecenia 
 
