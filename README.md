@@ -33,7 +33,7 @@ docker-compose --version
 
 ### Uruchomienie
 
-Przejdź do katalogu:
+Przejście do katalogu:
 
 ```
 cd /bitad-docker 
