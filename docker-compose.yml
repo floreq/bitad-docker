@@ -1,6 +1,7 @@
 version: "3"
 
 services:
+  # Nginx
   nginx:
     image: nginx:stable-alpine
     container_name: nginx
@@ -31,15 +32,16 @@ services:
     networks:
       - app-network
 
+  # MariaDB
   mysql:
-    image: mysql:5.7.22
+    image: mariadb
     container_name: mysql
     restart: unless-stopped
     tty: true
     ports:
       - "3306:3306"
     environment:
-      MYSQL_DATABASE: laravel
+      MYSQL_DATABASE: bitad
       MYSQL_ROOT_PASSWORD: 111111
       SERVICE_TAGS: dev
       SERVICE_NAME: mysql
