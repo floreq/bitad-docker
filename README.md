@@ -1,4 +1,8 @@
-## Struktura
+# Project Title
+
+One Paragraph of project description goes here
+
+## Opis struktury
     .
     ├── api                       
     │    ├── Dockerfile             # Obraz kontenera api
@@ -16,6 +20,36 @@
     ├── README.md
     └── docker-compose.yml          # Plik opisujący strukturę kontenerów
 
+## Wstęp
+
+### Przed uruchomieniem
+
+Upewnij się, że [docker](https://www.docker.com/) i [docker-compose](https://docs.docker.com/compose/) są zainstalowane:
+
+```
+docker --version
+docker-compose --version
+```
+
+### Uruchomienie
+
+Przejdź do katalogu:
+
+```
+cd /bitad-docker 
+```
+
+Pobranie i zbudowanie obrazów kontenerów:
+
+```
+docker-compose build
+```
+
+Uruchomienie kontenerów (-d pozwala na działanie w tle):
+
+```
+docker-compose up -d
+```
 ## Pomocne polecenia 
 
 ```
