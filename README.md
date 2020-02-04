@@ -1,19 +1,20 @@
 ## Struktura
     .
-    ├── api                       # Pliki ASP.NET Core
+    ├── api                       # Miejsce na pliki ASP.NET Core
     ├── mysql                     # Plik konfiguracyjny mysql
-    ├── nginx                     # Plik konfiguracyjny nginx
-    ├── php                       # Plik konfiguracyjny php
-    ├── src                       # Pliki aplikacji Laravel
+    ├── nginx                     # ------------------- nginx
+    ├── php                       # ------------------- php
+    ├── src                       # Miejsce na pliki aplikacji Laravel
     ├── .gitignore
     ├── Dockerfile
     ├── README.md
     └── docker-compose.yml
 
-## Polecenia 
+## Pomocne polecenia 
 
 ```
 docker run --rm -v $(pwd):/app composer install
+docker cp copy/from container:/copy/to
 php artisan config:clear
 docker-compose exec app php artisan migrate
 ```
