@@ -1,4 +1,4 @@
-# Bitad-docker
+# Bitad docker
 
 ## Opis struktury
     .
