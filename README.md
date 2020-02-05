@@ -32,37 +32,30 @@ docker-compose --version
 ### Uruchomienie
 
 Przejdź do pobranego reposytorium:
-
 ```
 cd /bitad-docker 
 ```
 
-Wykonaj komendę, która pobierze i zbuduje obraz kontenerów
-
+Wykonaj komendę, która pobierze i zbuduje obraz kontenerów:
 ```
 docker-compose build
 ```
 
 Uruchom wszystkie kontenery (-d pozwala na działanie w tle):
-
 ```
 docker-compose up -d
 ```
 ## Pomocne polecenia 
 
-### Kopiowanie do (lub z) kontenera pliku
+### Sprawdzenie statusu kontenerów
 
-Kopiowanie do kontenera:
 ```
-docker cp /copy/from nazwa-kontenera:/copy/to
+docker ps -a
 ```
-
-Kopiowanie z kontenera:
-```
-docker cp nazwa-kontenera:/copy/from f/copy/to
-```
+-a pokaże wszystkie kontenery, również zatrzymane.
 
 ### Zatrzymanie pracy wszystkich kontenerów
+
 ```
 docker-compose stop
 ```
@@ -81,12 +74,12 @@ Kontenery utracą wszystkie zmiany w nich wykonane. Pliki zapisane w dołączony
 docker-compose exec nazwa-kontenera polecenie
 ```
 
-Przykład
+Przykład:
 ```
 docker-compose exec app php artisan migrate
 ```
 
-Polecenie docker-compose exec działa tylko na włączonych kontenerach
+Polecenie docker-compose exec działa tylko na włączonych kontenerach.
 
 ### Podłączenie się do pracującego kontenera
 
@@ -94,20 +87,33 @@ Polecenie docker-compose exec działa tylko na włączonych kontenerach
 docker-compose exec nazwa-kontenera bash
 ```
 
-Przykład
+Przykład:
 ```
 docker-compose exec mysql bash
 ```
+
+### Kopiowanie pliku do (lub z) kontenera
+
+Kopiowanie do kontenera:
+```
+docker cp /copy/from nazwa-kontenera:/copy/to
+```
+
+Kopiowanie z kontenera:
+```
+docker cp nazwa-kontenera:/copy/from /copy/to
+```
+
+### Poboczne polecenia
+
+```
+docker run --rm -v $(pwd):/app composer install
+php artisan config:clear
+docker-compose exec app php artisan migrate
+```
+
 
 ## Warte uwagi
 * [The beauty of Docker for local Laravel development](https://dev.to/aschmelyun/the-beauty-of-docker-for-local-laravel-development-13c0?fbclid=IwAR2QfJg5qrXJfq4bBjBxltZUU1i1K6DyOIw3oFbRmAvVXXDd5u1_0E1fYQk) - Andrew Schmelyun
 * [How To Set Up Laravel, Nginx, and MySQL with Docker Compose](https://www.digitalocean.com/community/tutorials/how-to-set-up-laravel-nginx-and-mysql-with-docker-compose) - Faizan Bashir
 * [Running in Docker | ASP.NET Core 2.2 REST API Tutorial 14](https://www.youtube.com/watch?v=fAtfVu569CY) - Nick Chapsas
-
-
-```
-docker run --rm -v $(pwd):/app composer install
-docker cp copy/from container:/copy/to
-php artisan config:clear
-docker-compose exec app php artisan migrate
-```
