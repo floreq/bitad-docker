@@ -109,6 +109,7 @@ docker cp nazwa-kontenera:/copy/from /copy/to
 ```
 docker run --rm -v $(pwd):/app composer install
 php artisan config:clear
+php artisan cache:clear
 docker-compose exec app php artisan migrate
 ```
 
