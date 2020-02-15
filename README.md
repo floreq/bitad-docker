@@ -111,6 +111,7 @@ docker run --rm -v $(pwd):/app composer install
 php artisan config:clear
 php artisan cache:clear
 docker-compose exec app php artisan migrate
+mysqldump -u username -p database_name > data-dump.sql
 ```
 
 
