@@ -2,6 +2,7 @@ version: "3"
 
 services:
   # Nginx
+  # To enable https uncomment (ports, volumes)
   nginx:
     image: nginx:stable-alpine
     container_name: nginx
@@ -9,8 +10,11 @@ services:
     tty: true
     ports:
       - "80:80"
+      # - "443:443"
     volumes:
       - ./src:/var/www
+      # - ./your_domain_name/bundle.crt:/etc/ssl/bundle.crt
+      # - ./your_domain_name/your_domain_name.key:/etc/ssl/your_domain_name.key
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
     depends_on:
       - app
