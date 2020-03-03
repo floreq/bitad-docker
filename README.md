@@ -13,6 +13,8 @@
     │    └── ...                    # Plik konfiguracyjny php
     ├── src                       
     │    └── ...                    # Miejsce na pliki aplikacji Laravel
+    ├── your_domain_name
+    │    └── ...                    # Miejsce na pliki certyfikatu SSL
     ├── .gitignore
     ├── Dockerfile                  # Obraz kontenera aplikacji Laravel
     ├── README.md
